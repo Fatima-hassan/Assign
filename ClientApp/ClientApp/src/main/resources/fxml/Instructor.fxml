@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="mainPane" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controller.InstructorController">
+   <children>
+      <Pane fx:id="editOrMakePane" prefHeight="608.0" prefWidth="607.0" visible="false">
+         <children>
+            <Pane layoutX="104.0" layoutY="190.0" prefHeight="228.0" prefWidth="399.0">
+               <children>
+                  <Label layoutX="80.0" layoutY="50.0" text="Make a new Quiz" textFill="#1d1e1e">
+                     <font>
+                        <Font name="Raleway SemiBold" size="30.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnMakeNew" layoutX="77.0" layoutY="129.0" mnemonicParsing="false" onAction="#makeQuizPaneVis" prefHeight="47.0" prefWidth="246.0" text="Go" textFill="#1b1a1a">
+                     <font>
+                        <Font name="Raleway ExtraLight" size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="makeQuizPane" prefHeight="608.0" prefWidth="607.0" visible="false">
+         <children>
+            <Pane layoutX="79.0" layoutY="108.0" prefHeight="418.0" prefWidth="449.0">
+               <children>
+                  <Label layoutX="175.0" layoutY="60.0" text="Quiz Title" textFill="#353635">
+                     <font>
+                        <Font name="Raleway" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="138.0" layoutY="166.0" text="Quiz Description" textFill="#353635">
+                     <font>
+                        <Font name="Raleway" size="23.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="quizTitle" layoutX="41.0" layoutY="104.0" prefHeight="40.0" prefWidth="352.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextArea fx:id="quizDesc" layoutX="41.0" layoutY="209.0" prefHeight="100.0" prefWidth="352.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextArea>
+                  <Button fx:id="btnQuizStart" layoutX="137.0" layoutY="348.0" mnemonicParsing="false" onAction="#startMakingQuiz" prefHeight="47.0" prefWidth="176.0" text="Submit" textFill="#1e1d1d">
+                     <font>
+                        <Font name="Raleway SemiBold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="lblErrorMake" layoutX="41.0" layoutY="316.0" prefHeight="17.0" prefWidth="352.0" textFill="RED" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="subQuesPane" prefHeight="608.0" prefWidth="607.0">
+         <children>
+            <Button layoutX="113.0" layoutY="105.0" mnemonicParsing="false" onAction="#makeMCQ" prefHeight="36.0" prefWidth="111.0" text="MCQ" textFill="#171717">
+               <font>
+                  <Font name="Raleway ExtraLight" size="20.0" />
+               </font></Button>
+            <Button layoutX="247.0" layoutY="105.0" mnemonicParsing="false" onAction="#makeTrueFalse" prefHeight="21.0" prefWidth="136.0" text="True / False" textFill="#171717">
+               <font>
+                  <Font name="Raleway ExtraLight" size="20.0" />
+               </font></Button>
+            <Button layoutX="407.0" layoutY="105.0" mnemonicParsing="false" onAction="#makeNumeric" prefHeight="21.0" prefWidth="123.0" text="Numeric" textFill="#171717">
+               <font>
+                  <Font name="Raleway ExtraLight" size="20.0" />
+               </font></Button>
+            <Pane fx:id="makeMCQPane" layoutX="21.0" layoutY="156.0" prefHeight="435.0" prefWidth="565.0" visible="false">
+               <children>
+                  <Label layoutX="25.0" layoutY="14.0" prefHeight="32.0" prefWidth="204.0" text="Question " textFill="#141313">
+                     <font>
+                        <Font name="Raleway" size="22.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="txtQuesMCQ" layoutX="25.0" layoutY="51.0" prefHeight="116.0" prefWidth="524.0">
+                     <font>
+                        <Font name="Raleway SemiBold" size="14.0" />
+                     </font></TextArea>
+                  <RadioButton fx:id="radMCQa" layoutX="41.0" layoutY="188.0" mnemonicParsing="false" selected="true">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="mcqgrp" />
+                     </toggleGroup>
+                     <font>
+                        <Font name="Raleway" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="radMCQb" layoutX="41.0" layoutY="237.0" mnemonicParsing="false" toggleGroup="$mcqgrp">
+                     <font>
+                        <Font name="Raleway" size="15.0" />
+                     </font></RadioButton>
+                  <RadioButton fx:id="radMCQc" layoutX="41.0" layoutY="282.0" mnemonicParsing="false" toggleGroup="$mcqgrp">
+                     <font>
+                        <Font name="Raleway" size="15.0" />
+                     </font></RadioButton>
+                  <RadioButton fx:id="radMCQd" layoutX="41.0" layoutY="329.0" mnemonicParsing="false" toggleGroup="$mcqgrp">
+                     <font>
+                        <Font name="Raleway" size="15.0" />
+                     </font></RadioButton>
+                  <TextField fx:id="txtMCQa" layoutX="86.0" layoutY="180.0" prefHeight="30.0" prefWidth="463.0">
+                     <font>
+                        <Font name="Raleway SemiBold" size="14.0" />
+                     </font></TextField>
+                  <TextField fx:id="txtMCQb" layoutX="86.0" layoutY="229.0" prefHeight="30.0" prefWidth="463.0">
+                     <font>
+                        <Font name="Raleway SemiBold" size="14.0" />
+                     </font></TextField>
+                  <TextField fx:id="txtMCQc" layoutX="86.0" layoutY="274.0" prefHeight="30.0" prefWidth="463.0">
+                     <font>
+                        <Font name="Raleway SemiBold" size="14.0" />
+                     </font></TextField>
+                  <Button layoutX="399.0" layoutY="363.0" mnemonicParsing="false" onAction="#subMCQ" prefHeight="47.0" prefWidth="150.0" text="Submit" textFill="#171717">
+                     <font>
+                        <Font name="Raleway SemiBold" size="20.0" />
+                     </font></Button>
+                  <TextField fx:id="txtMCQd" layoutX="86.0" layoutY="321.0" prefHeight="30.0" prefWidth="463.0">
+                     <font>
+                        <Font name="Raleway SemiBold" size="14.0" />
+                     </font></TextField>
+                  <Label fx:id="lblErrorMCQ" layoutX="37.0" layoutY="378.0" prefHeight="17.0" prefWidth="334.0" textFill="RED">
+                     <font>
+                        <Font name="Raleway" size="12.0" />
+                     </font></Label>
+               </children>
+            </Pane>
+            <Pane fx:id="makeTrueFalsePane" layoutX="20.0" layoutY="156.0" prefHeight="435.0" prefWidth="565.0" visible="false">
+               <children>
+                  <Button layoutX="399.0" layoutY="358.0" mnemonicParsing="false" onAction="#subTrueFalse" prefHeight="47.0" prefWidth="150.0" text="Submit" textFill="#282727">
+                     <font>
+                        <Font name="Raleway SemiBold" size="20.0" />
+                     </font>
+                  </Button>
+                  <TextArea fx:id="txtQuesTrueFalse" layoutX="31.0" layoutY="68.0" prefHeight="126.0" prefWidth="504.0">
+                     <font>
+                        <Font name="Raleway SemiBold" size="14.0" />
+                     </font></TextArea>
+                  <RadioButton fx:id="radTrue" layoutX="60.0" layoutY="209.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="136.0" selected="true" text="True" textFill="#2c2929">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="truefalsegrp" />
+                     </toggleGroup>
+                     <font>
+                        <Font name="Raleway SemiBold" size="20.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="radFalse" layoutX="60.0" layoutY="266.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="111.0" text="False" textFill="#2c2929" toggleGroup="$truefalsegrp">
+                     <font>
+                        <Font name="Raleway SemiBold" size="20.0" />
+                     </font>
+                  </RadioButton>
+                  <Label fx:id="lblErrorTrueFalse" layoutX="40.0" layoutY="373.0" prefHeight="17.0" prefWidth="340.0" textFill="#ff0404">
+                     <font>
+                        <Font name="Raleway SemiBold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="31.0" layoutY="24.0" prefHeight="32.0" prefWidth="204.0" text="Question " textFill="#0a0a0a">
+                     <font>
+                        <Font name="Raleway" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="makeNumericPane" layoutX="20.0" layoutY="156.0" prefHeight="427.0" prefWidth="565.0">
+               <children>
+                  <TextArea fx:id="txtQuesNumeric" layoutX="32.0" layoutY="65.0" prefHeight="100.0" prefWidth="504.0">
+                     <font>
+                        <Font name="Raleway SemiBold" size="14.0" />
+                     </font></TextArea>
+                  <TextArea fx:id="txtAnsNumeric" layoutX="35.0" layoutY="234.0" prefHeight="100.0" prefWidth="504.0">
+                     <font>
+                        <Font name="Raleway SemiBold" size="14.0" />
+                     </font></TextArea>
+                  <Label fx:id="lblErrorNumeric" />
+                  <Button layoutX="391.0" layoutY="357.0" mnemonicParsing="false" onAction="#subNumeric" prefHeight="47.0" prefWidth="150.0" text="Submit" textFill="#222020">
+                     <font>
+                        <Font name="Raleway SemiBold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="lblErrorDone" layoutX="35.0" layoutY="372.0" prefHeight="17.0" prefWidth="340.0" textFill="RED">
+                     <font>
+                        <Font name="Raleway SemiBold" size="14.0" />
+                     </font></Label>
+                  <Label layoutX="32.0" layoutY="33.0" prefHeight="32.0" prefWidth="204.0" text="Question " textFill="#111010">
+                     <font>
+                        <Font name="Raleway" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="32.0" layoutY="198.0" prefHeight="32.0" prefWidth="204.0" text="Expected Answer:" textFill="#111010">
+                     <font>
+                        <Font name="Raleway" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button layoutX="417.0" layoutY="27.0" mnemonicParsing="false" onAction="#makeQuiz" prefHeight="9.0" prefWidth="176.0" text="Make Quiz" textFill="#171717">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <TextField fx:id="txtMarks" layoutX="142.0" layoutY="23.0" prefHeight="45.0" prefWidth="82.0" style="-fx-background-color: #ffffff;">
+               <font>
+                  <Font name="Raleway" size="18.0" />
+               </font></TextField>
+            <Label fx:id="lblErrorDone1" layoutX="60.0" layoutY="23.0" prefHeight="45.0" prefWidth="82.0" text="  Marks :" textFill="#2d3740">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

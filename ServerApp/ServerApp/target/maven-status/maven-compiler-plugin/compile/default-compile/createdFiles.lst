@@ -1,0 +1,17 @@
+server\rest\QuizRest.class
+server\dao\QuestionDao.class
+server\setting\HibernateConfig.class
+server\model\Quiz.class
+server\setting\WebConfig.class
+server\dao\UserDao.class
+server\service\QuizService.class
+server\setting\WebInitializer.class
+server\service\QuestionService.class
+server\model\User.class
+server\model\Mcq.class
+server\model\TrueFalse.class
+server\service\UserService.class
+server\model\Numeric.class
+server\rest\QuestionRest.class
+server\dao\QuizDao.class
+server\rest\UserRest.class
