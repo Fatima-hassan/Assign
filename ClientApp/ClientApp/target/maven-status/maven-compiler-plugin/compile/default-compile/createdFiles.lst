@@ -1,0 +1,13 @@
+client\bo\QuizBo.class
+client\clientapp\Main.class
+client\bo\QuestionBo.class
+client\controller\LoginController.class
+client\controller\InstructorController.class
+client\model\Numeric.class
+client\model\Mcq.class
+client\controller\StudentController.class
+client\model\User.class
+client\bo\UserBo.class
+client\controller\StudentController$1.class
+client\model\Quiz.class
+client\model\TrueFalse.class
